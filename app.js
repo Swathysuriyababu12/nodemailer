@@ -7,7 +7,7 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const sendMail = require("./sendMail");
-
+const sendingMail = require("./sendingMail");
 var app = express();
 
 // view engine setup
@@ -19,11 +19,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("hello world");
 });
 app.get("/sendmail", sendMail);
+app.post("/send", sendingMail);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

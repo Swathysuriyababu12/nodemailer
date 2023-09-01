@@ -10,7 +10,7 @@ var usersRouter = require("./routes/users");
 const sendMail = require("./sendMail");
 const sendingMail = require("./sendingMail");
 var app = express();
-
+console.log(sendingMail);
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");

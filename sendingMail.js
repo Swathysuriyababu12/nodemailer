@@ -19,7 +19,7 @@ let mailTransporter = nodemailer.createTransport({
 //   text: "this is the message from nodemailer",
 // };
 
-const sendMail = async (req, res) => {
+const sendingMail = async (req, res) => {
   let details = {
     // from: "awsuriya@gmail.com",
     to: "swathysuryababu@gmail.com",
@@ -36,4 +36,4 @@ const sendMail = async (req, res) => {
   res.send("I am Sending Mail");
 };
 
-module.exports = sendMail;
+module.exports = sendingMail;
